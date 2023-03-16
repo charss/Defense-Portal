@@ -4,22 +4,28 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "SET NODE_ENV=development && nodemon -r dotenv/config server.js dotenv_config_path=./.env.development ",
+    "start": "SET NODE_ENV=production && node -r dotenv/config server.js dotenv_config_path=./.env",
+    "dev": "SET NODE_ENV=development && nodemon -r dotenv/config server.js dotenv_config_path=./.env.development",
     "test": "jest --watchAll --setupFiles",
     "seed": "SET NODE_ENV=development && node -r dotenv/config db/index.js dotenv_config_path=./.env.development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "http-errors": "^2.0.0",
-    "pg": "^8.10.0"
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.29.3"
   },
   "devDependencies": {
     "jest": "^29.5.0",
     "nodemon": "^2.0.21",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "sequelize-cli": "^6.6.0"
   }
 }
