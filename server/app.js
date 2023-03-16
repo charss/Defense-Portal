@@ -3,9 +3,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-require("dotenv").config({
-  path: path.join(__dirname, `./.env.${process.env.NODE_ENV}`),
-});
+require("dotenv").config();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

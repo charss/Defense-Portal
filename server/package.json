@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "SET NODE_ENV=production && node -r dotenv/config server.js dotenv_config_path=./.env",
-    "dev": "SET NODE_ENV=development && nodemon -r dotenv/config server.js dotenv_config_path=./.env.development",
+    "start": "SET NODE_ENV=production && node -r dotenv/config server.js",
+    "dev": "SET NODE_ENV=development && nodemon -r dotenv/config server.js",
     "test": "jest --watchAll --setupFiles",
-    "seed": "SET NODE_ENV=development && node -r dotenv/config db/index.js dotenv_config_path=./.env.development"
+    "seed": "SET NODE_ENV=development && node -r dotenv/config db/index.js"
   },
   "author": "",
   "license": "ISC",
