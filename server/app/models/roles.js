@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Roles.hasMany(models.Panelists, {
         foreignKey: "role_id",
-        as: "roles",
+        as: "panelists",
       });
     }
   }
