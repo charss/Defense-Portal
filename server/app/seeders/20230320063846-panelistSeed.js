@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    return await queryInterface.bulkInsert("Panelists", [
+    return await queryInterface.bulkInsert("panelists", [
       {
         username: "test_user1",
         password: "test",
@@ -45,6 +45,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return await queryInterface.bulkDelete("Panelists", null, {});
+    return await queryInterface.bulkDelete("panelists", null, {});
   },
 };
