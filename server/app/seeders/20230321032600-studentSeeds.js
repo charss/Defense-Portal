@@ -17,11 +17,13 @@ module.exports = {
         last_name: "Schwinghammer",
         first_name: "Matthew",
         middle_name: "Lievin",
+        password: "test",
       },
       {
         last_name: "Marquez",
         first_name: "Adekunle",
         middle_name: "Melvyn",
+        password: "test",
       },
     ]);
   },
