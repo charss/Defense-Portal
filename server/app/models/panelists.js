@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
       panelists.belongsTo(models.roles, {
         foreignKey: "role_id",
       });
+
+      panelists.hasMany(models.groups, {
+        foreignKey: "mentor_id",
+        as: "mentee",
+        onDelete: "SET NULL",
+      });
     }
   }
   panelists.init(

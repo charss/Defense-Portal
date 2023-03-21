@@ -20,6 +20,15 @@ module.exports = {
       middle_name: {
         type: Sequelize.STRING,
       },
+      group_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "groups",
+          key: "id",
+          as: "group_id",
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
