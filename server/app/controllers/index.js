@@ -1,3 +1,4 @@
 const panelists = require("./panelistsController.js");
 const roles = require("./rolesController.js");
-module.exports = { panelists, roles };
+const students = require("./studentsController.js");
+module.exports = { panelists, roles, students };
