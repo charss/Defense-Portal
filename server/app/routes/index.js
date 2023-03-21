@@ -3,4 +3,5 @@ module.exports = (app) => {
   require("../routes/studentsRoutes")( app );
   require("../routes/panelistsRoutes")( app );
   require("../routes/rolesRoutes")( app );
+  require("../routes/groupsRoutes")( app );
 };
