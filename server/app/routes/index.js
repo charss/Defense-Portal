@@ -4,4 +4,5 @@ module.exports = (app) => {
   require("../routes/panelistsRoutes")( app );
   require("../routes/rolesRoutes")( app );
   require("../routes/groupsRoutes")( app );
+  require("../routes/schedulesRoutes")( app );
 };
