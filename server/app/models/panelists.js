@@ -17,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
         as: "mentee",
         onDelete: "SET NULL",
       });
+
+      panelists.belongsToMany(models.schedules, {
+        through: "schedule_panelists",
+        as: "schedules",
+        foreignKey: "panelist_id",
+      });
     }
   }
   panelists.init(

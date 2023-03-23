@@ -26,6 +26,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "more_info",
         constraints: false,
       });
+
+      schedules.belongsToMany(models.panelists, {
+        through: "schedule_panelists",
+        as: "panelists",
+        foreignKey: "schedule_id",
+      });
     }
     getSchedules(options) {
       if (!this.scheduleType) return Promise.resolve(null);
