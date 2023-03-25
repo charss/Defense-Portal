@@ -14,17 +14,14 @@ module.exports = {
      */
     return await queryInterface.bulkInsert("lu_school_terms", [
       {
-        term: 2020,
+        term: 1,
       },
       {
-        term: 2021,
+        term: 2,
       },
       {
-        term: 2022,
-      },
-      {
-        term: 2023,
-      },
+        term: 3,
+      }
     ]);
   },
 
