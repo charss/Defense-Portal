@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       groups.belongsTo(models.panelists, {
         foreignKey: "mentor_id",
       });
+
+      groups.belongsTo(models.lu_school_terms, {
+        foreignKey: "term_started",
+      });
     }
   }
   groups.init(

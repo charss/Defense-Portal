@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      lu_school_terms.hasMany(models.groups, {
+        foreignKey: "term_started",
+        as: "term_started",
+      });
     }
   }
   lu_school_terms.init(
