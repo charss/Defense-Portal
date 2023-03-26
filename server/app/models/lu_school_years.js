@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "sy_started",
         as: "sy_started",
       });
+
+      lu_school_years.hasOne(models.s_school_year_term, {
+        foreignKey: "school_year",
+      });
     }
   }
   lu_school_years.init(
