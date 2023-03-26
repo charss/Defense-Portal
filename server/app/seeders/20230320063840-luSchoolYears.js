@@ -14,13 +14,13 @@ module.exports = {
      */
     return await queryInterface.bulkInsert("lu_school_years", [
       {
-        school_year: 2021,
+        school_year: 20202021,
       },
       {
-        school_year: 2022,
+        school_year: 20212022,
       },
       {
-        school_year: 2023,
+        school_year: 20222023,
       },
     ]);
   },

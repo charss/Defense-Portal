@@ -17,14 +17,14 @@ module.exports = {
         name: "Group 1",
         program: "BSCS",
         term_started: 1,
-        sy_started: 2022,
+        sy_started: 20222023,
         mentor_id: 1,
       },
       {
         name: "Group 2",
         program: "BSIT",
         term_started: 1,
-        sy_started: 2023,
+        sy_started: 20222023,
         mentor_id: 1,
       },
     ]);
