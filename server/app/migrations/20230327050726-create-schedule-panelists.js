@@ -15,7 +15,7 @@ module.exports = {
         references: {
           model: "panelists",
           key: "id",
-          as: "panelist",
+          as: "panelists",
         },
       },
       schedule_id: {
@@ -24,7 +24,7 @@ module.exports = {
         references: {
           model: "schedules",
           key: "id",
-          as: "schedule",
+          as: "schedules",
         },
       },
       is_head: {

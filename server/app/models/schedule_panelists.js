@@ -8,16 +8,6 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      schedule_panelists.hasOne(models.schedules, {
-        foreignKey: "schedule_id",
-        as: "schedule",
-      });
-
-      schedule_panelists.hasOne(models.panelists, {
-        foreignKey: "panelist_id",
-        as: "panelist",
-      });
-
       schedule_panelists.hasMany(models.scoresheets, {
         foreignKey: "schedule_panelists_id",
         as: "scoresheets",

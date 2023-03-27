@@ -1,6 +1,6 @@
 const schedulesController = require("../controllers").schedules;
 
 module.exports = (app) => {
-  app.get("/schedules/", schedulesController.index);
-  app.get("/schedules/:id", schedulesController.show);
+  app.get("/schedules/", schedulesController.getAll);
+  app.get("/schedules/:id", schedulesController.getById);
 };
