@@ -4,6 +4,7 @@ const Schedules = require("../models").schedules;
 exports.getAll = (req, res) => {
   return Panelists.findAll({
     include: { model: Schedules, as: "schedules" },
+    where: req.query,
   }).then((data) => {
     if (!data) {
       res.status(404).send({ error: "Panelists not found" });
