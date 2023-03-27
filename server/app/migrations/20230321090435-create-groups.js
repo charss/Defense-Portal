@@ -39,7 +39,7 @@ module.exports = {
         references: {
           model: "panelists",
           key: "id",
-          as: "mentor_id",
+          as: "mentor",
         },
       },
       createdAt: {
