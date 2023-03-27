@@ -9,13 +9,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      template_rubrics.hasOne(models.rubrics, {
-        foreignKey: "rubric_id",
-      });
-
-      template_rubrics.hasOne(models.templates, {
-        foreignKey: "template_id",
-      });
     }
   }
   template_rubrics.init(
