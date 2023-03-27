@@ -26,7 +26,7 @@ module.exports = {
         references: {
           model: "groups",
           key: "id",
-          as: "group_id",
+          as: "group",
         },
       },
       createdAt: {
