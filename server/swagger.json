@@ -1,0 +1,323 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My User Project CRUD",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Students",
+      "description": "API for students in the system"
+    },
+    {
+      "name": "Groups",
+      "description": "API for groups in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/students": {
+      "get": {
+        "tags": ["Students"],
+        "summary": "Get all students in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Students"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Students"],
+        "summary": "Create a new student in system",
+        "parameters": [
+          {
+            "name": "student",
+            "in": "body",
+            "description": "Student that we want to create",
+            "schema": {
+              "$ref": "#/definitions/NewOrUpdateStudent"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New student is created",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete student with given ID",
+        "tags": ["Students"],
+        "responses": {
+          "200": {
+            "description": "Student is deleted",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      }
+    },
+    "/students/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of student we want to find",
+          "type": "integer"
+        }
+      ],
+      "get": {
+        "summary": "Get student with given ID",
+        "tags": ["Students"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update student with given ID",
+        "tags": ["Students"],
+        "parameters": [
+          {
+            "name": "student",
+            "in": "body",
+            "description": "Student with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/NewOrUpdateStudent"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Student is updated",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      }
+    },
+    "/groups": {
+      "get": {
+        "tags": ["Groups"],
+        "summary": "Get all groups",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Groups"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Groups"],
+        "summary": "Create a new group",
+        "parameters": [
+          {
+            "name": "group",
+            "in": "body",
+            "description": "Group that we want to create",
+            "schema": {
+              "$ref": "#/definitions/NewOrUpdateGroup"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New group is created",
+            "schema": {
+              "$ref": "#/definitions/Group"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete group with given ID",
+        "tags": ["Groups"],
+        "responses": {
+          "200": {
+            "description": "Group is deleted",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      }
+    },
+    "/groups/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of group we want to find",
+          "type": "integer"
+        }
+      ],
+      "get": {
+        "summary": "Get group with given ID",
+        "tags": ["Groups"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Groups"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update group with given ID",
+        "tags": ["Groups"],
+        "parameters": [
+          {
+            "name": "groups",
+            "in": "body",
+            "description": "Group with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/NewOrUpdateGroup"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group is updated",
+            "schema": {
+              "$ref": "#/definitions/Group"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Student": {
+      "required": ["id", "last_name", "first_name", "group_id"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "middle_name": {
+          "type": "string"
+        },
+        "group_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "Students": {
+      "type": "array",
+      "$ref": "#/definitions/Student"
+    },
+    "NewOrUpdateStudent": {
+      "required": ["last_name", "first_name", "group_id"],
+      "properties": {
+        "last_name": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "middle_name": {
+          "type": "string"
+        },
+        "group_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "Group": {
+      "required": [
+        "id",
+        "name",
+        "program",
+        "term_started",
+        "sy_started",
+        "is_active"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "project_title": {
+          "type": "string"
+        },
+        "program": {
+          "type": "string"
+        },
+        "term_started": {
+          "type": "integer"
+        },
+        "sy_started": {
+          "type": "integer"
+        },
+        "is_active": {
+          "type": "boolean"
+        },
+        "mentor_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "Groups": {
+      "type": "array",
+      "$ref": "#/definitions/Group"
+    },
+    "NewOrUpdateGroup": {
+      "required": ["name", "program", "is_active"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "project_title": {
+          "type": "string"
+        },
+        "program": {
+          "type": "string"
+        },
+        "is_active": {
+          "type": "boolean",
+          "default": true
+        },
+        "mentor_id": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
