@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "rubric_id",
       });
 
-      template_rubrics.hasOne(models.tempaltes, {
+      template_rubrics.hasOne(models.templates, {
         foreignKey: "template_id",
       });
     }
