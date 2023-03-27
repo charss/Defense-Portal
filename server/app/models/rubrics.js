@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "template",
         foreignKey: "template_id",
       });
+
+      rubrics.hasMany(models.group_scores, {
+        foreignKey: "rubric_id",
+        as: "rubrics",
+      });
     }
   }
   rubrics.init(
