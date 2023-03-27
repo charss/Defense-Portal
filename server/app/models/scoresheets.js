@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "scoresheet_id",
         as: "scoresheets",
       });
+
+      scoresheets.hasMany(models.indiv_scores, {
+        foreignKey: "scoresheet_id",
+        as: "scoresheet",
+      });
     }
   }
   scoresheets.init(

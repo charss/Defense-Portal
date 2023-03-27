@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "rubric_id",
         as: "rubrics",
       });
+
+      rubrics.hasMany(models.indiv_scores, {
+        foreignKey: "rubric_id",
+        as: "rubric",
+      });
     }
   }
   rubrics.init(
