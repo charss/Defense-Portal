@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "panelist_id",
         as: "panelist",
       });
+
+      schedule_panelists.hasMany(models.scoresheets, {
+        foreignKey: "schedule_panelists_id",
+        as: "scoresheets",
+      });
     }
   }
   schedule_panelists.init(
