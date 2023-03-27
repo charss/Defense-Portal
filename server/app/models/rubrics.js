@@ -8,11 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-      rubrics.belongsToMany(models.template_rubric, {
+      rubrics.belongsToMany(models.templates, {
         through: "template_rubrics",
-        as: "rubric",
-        foreignKey: "rubric_id",
+        as: "template",
+        foreignKey: "template_id",
       });
     }
   }
