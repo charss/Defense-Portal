@@ -2,37 +2,27 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("students", {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
+    await queryInterface.createTable("lu_school_years", {
+      school_year: {
         type: Sequelize.INTEGER,
-      },
-      last_name: {
-        type: Sequelize.STRING,
+        primaryKey: true,
         allowNull: false,
-      },
-      first_name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      middle_name: {
-        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        allowNull: false,
         defaultValue: Sequelize.fn("now"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        allowNull: false,
         defaultValue: Sequelize.fn("now"),
       },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("students");
+    await queryInterface.dropTable("lu_school_years");
   },
 };

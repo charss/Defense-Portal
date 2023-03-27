@@ -12,18 +12,12 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    return await queryInterface.bulkInsert("students", [
+    return await queryInterface.bulkInsert("schedule_types", [
       {
-        last_name: "Schwinghammer",
-        first_name: "Matthew",
-        middle_name: "Lievin",
-        password: "test",
+        type: "Title Defense",
       },
       {
-        last_name: "Marquez",
-        first_name: "Adekunle",
-        middle_name: "Melvyn",
-        password: "test",
+        type: "Thesis Defense",
       },
     ]);
   },
@@ -35,6 +29,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return await queryInterface.bulkDelete("students", null, {});
+
+    return await queryInterface.bulkDelete("scheduletypes", null, {});
   },
 };

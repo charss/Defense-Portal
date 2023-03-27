@@ -8,7 +8,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      students.belongsTo(models.groups, {
+        foreignKey: "group_id",
+      });
+
+      students.hasMany(models.indiv_scores, {
+        foreignKey: "student_id",
+        as: "student",
+      });
     }
   }
   students.init(
@@ -16,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       last_name: DataTypes.STRING,
       first_name: DataTypes.STRING,
       middle_name: DataTypes.STRING,
-      password: DataTypes.STRING,
+      group_id: DataTypes.INTEGER,
     },
     {
       sequelize,
