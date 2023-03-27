@@ -8,6 +8,12 @@ module.exports = (sequelize, DataTypes) => {
         as: "schedules",
         foreignKey: "schedule_id",
       });
+
+      templates.belongsToMany(models.template_rubrics, {
+        through: "template_rubrics",
+        as: "rubric",
+        foreignKey: "rubric_id",
+      });
     }
   }
   templates.init(

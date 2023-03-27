@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      rubrics.belongsToMany(models.template_rubric, {
+        through: "template_rubrics",
+        as: "rubric",
+        foreignKey: "rubric_id",
+      });
     }
   }
   rubrics.init(
