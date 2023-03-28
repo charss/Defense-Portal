@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "schedule_id",
       });
 
-      templates.belongsToMany(models.template_rubrics, {
+      templates.belongsToMany(models.rubrics, {
         through: "template_rubrics",
-        as: "rubric",
+        as: "rubrics",
         foreignKey: "rubric_id",
       });
     }
