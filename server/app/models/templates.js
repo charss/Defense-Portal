@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   templates.init(
     {
+      title: DataTypes.STRING,
       grading_type: DataTypes.STRING,
       pbl_level: DataTypes.STRING,
-      sheet_title: DataTypes.STRING,
       is_cs: DataTypes.BOOLEAN,
     },
     {

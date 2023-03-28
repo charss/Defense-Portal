@@ -5,33 +5,33 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return await queryInterface.bulkInsert("templates", [
       {
+        title: "Sample Template 1",
         grading_type: "Individual",
         pbl_level: "PBL1",
-        sheet_title: "Sample Template 1",
         is_cs: false,
       },
       {
+        title: "Sample Template 2",
         grading_type: "Group",
         pbl_level: "PBL1",
-        sheet_title: "Sample Template 2",
         is_cs: false,
       },
       {
+        title: "Sample Template 3",
         grading_type: "Individual",
         pbl_level: "PBL2",
-        sheet_title: "Sample Template 3",
         is_cs: false,
       },
       {
+        title: "Sample Template 4",
         grading_type: "Individual",
         pbl_level: "PBL3",
-        sheet_title: "Sample Template 4",
         is_cs: false,
       },
       {
+        title: "Sample Template 5",
         grading_type: "Group",
         pbl_level: "PBL1",
-        sheet_title: "Sample Template 5",
         is_cs: true,
       },
     ]);

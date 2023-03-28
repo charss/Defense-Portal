@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      sheet_title: {
+      title: {
         type: Sequelize.STRING,
         allowNull: false,
       },
