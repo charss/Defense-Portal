@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       templates.belongsToMany(models.rubrics, {
         through: "template_rubrics",
         as: "rubrics",
-        foreignKey: "rubric_id",
+        foreignKey: "template_id",
       });
     }
   }
