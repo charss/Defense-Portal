@@ -5,6 +5,7 @@ const students = require("./studentsController.js");
 const groups = require("./groupsController.js");
 const schedules = require("./schedulesController.js");
 const rubrics = require("./rubricsController.js");
+const templates = require("./templatesController.js");
 
 module.exports = {
   auth,
@@ -14,4 +15,5 @@ module.exports = {
   groups,
   schedules,
   rubrics,
+  templates
 };

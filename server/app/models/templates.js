@@ -9,18 +9,18 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "schedule_id",
       });
 
-      templates.belongsToMany(models.template_rubrics, {
+      templates.belongsToMany(models.rubrics, {
         through: "template_rubrics",
-        as: "rubric",
-        foreignKey: "rubric_id",
+        as: "rubrics",
+        foreignKey: "template_id",
       });
     }
   }
   templates.init(
     {
+      title: DataTypes.STRING,
       grading_type: DataTypes.STRING,
-      pbl_level: DataTypes.INTEGER,
-      sheet_title: DataTypes.STRING,
+      pbl_level: DataTypes.STRING,
       is_cs: DataTypes.BOOLEAN,
     },
     {

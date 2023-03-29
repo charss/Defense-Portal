@@ -14,10 +14,10 @@ module.exports = {
         allowNull: false,
       },
       pbl_level: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      sheet_title: {
+      title: {
         type: Sequelize.STRING,
         allowNull: false,
       },

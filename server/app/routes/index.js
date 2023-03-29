@@ -6,4 +6,5 @@ module.exports = (app) => {
   require("../routes/groupsRoutes")( app );
   require("../routes/schedulesRoutes")( app );
   require("../routes/rubricsRoutes")( app );
+  require("../routes/templatesRoutes")( app );
 };

@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       rubrics.belongsToMany(models.templates, {
         through: "template_rubrics",
-        as: "template",
-        foreignKey: "template_id",
+        as: "templates",
+        foreignKey: "rubric_id",
       });
 
       rubrics.hasMany(models.group_scores, {
