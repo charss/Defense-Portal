@@ -6,7 +6,7 @@
   "scripts": {
     "start": "SET NODE_ENV=production && node -r dotenv/config server.js",
     "dev": "SET NODE_ENV=development && nodemon -r dotenv/config server.js",
-    "test": "jest --watchAll --setupFiles",
+    "test": "SET NODE_ENV=test && jest --watchAll --setupFiles --testTimeout=5000",
     "db:create": "npx sequelize-cli db:create",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:g:migration": "npx sequelize-cli migration:generate --name",
